@@ -1,8 +1,3 @@
-/*
- * Copyright (c) 2021 Nordic Semiconductor ASA
- * SPDX-License-Identifier: Apache-2.0
- */
-
 #define DT_DRV_COMPAT zephyr_example_sensor
 
 #include <zephyr/device.h>

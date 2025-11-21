@@ -1,7 +1,3 @@
-# Copyright (c) 2019 Foundries.io
-# Copyright (c) 2022 Nordic Semiconductor ASA
-# SPDX-License-Identifier: Apache-2.0
-
 '''example_west_command.py
 
 Example of a west extension in the example-application repository.'''
