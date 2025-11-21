@@ -16,8 +16,8 @@
 !LICENSE
 !README.md
 
-!docs/
-!docs/**
+!doc/
+!doc/**
 !examples/
 !examples/**
 !include/

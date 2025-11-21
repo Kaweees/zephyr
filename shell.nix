@@ -25,5 +25,9 @@ mkShell {
   ];
 
   # Shell hook to set up environment
-  shellHook = '''';
+  shellHook = ''
+    export PATH=${zephyr.sdkFull}/arm-zephyr-eabi/bin:$PATH
+    export PATH=${zephyr.pythonEnv}/bin:$PATH
+    export PATH=${zephyr.hosttools-nix}/bin:$PATH
+  '';
 }
