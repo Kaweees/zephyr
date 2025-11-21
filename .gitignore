@@ -13,19 +13,30 @@
 !CMakeLists.txt
 !.clang-format
 !.cmake-format.py
+!Kconfig
 !LICENSE
 !README.md
 
+!app/
+!app/**
+!boards/
+!boards/**
 !doc/
 !doc/**
-!examples/
-!examples/**
+!drivers/
+!drivers/**
+!dts/
+!dts/**
 !include/
 !include/**
+!lib/
+!lib/**
 !scripts/
 !scripts/**
 !tests/
 !tests/**
+!zephyr/
+!zephyr/**
 
 !*.md
 !*.mdc
