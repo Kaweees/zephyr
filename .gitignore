@@ -5,6 +5,7 @@
 !assets/
 !assets/**
 !.editorconfig
+!.envrc
 !.gitattributes
 !.gitignore
 !.gitmodules

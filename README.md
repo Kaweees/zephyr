@@ -20,11 +20,11 @@
 </div>
 
 <a href="https://github.com/Kaweees/KiwiCPP">
-  <img alt="C++ Logo" src="assets/img/cpp.svg" align="right" width="150">
+    <img alt="C++ Logo" src="assets/img/cpp.svg" align="right" width="150">
 </a>
 
 <div align="left">
-  <h1><em><a href="https://github.com/Kaweees/KiwiCPP">~KiwiCPP</a></em></h1>
+    <h1><em><a href="https://github.com/Kaweees/KiwiCPP">~KiwiCPP</a></em></h1>
 </div>
 
 <!-- ABOUT THE PROJECT -->
@@ -46,10 +46,7 @@ A template for creating C++ header-only libraries accelerated with CUDA/Apple Me
 ## Preview
 
 <p align="center">
-  <img src="assets/img/demo.mp4"
-  width = "80%"
-  alt = "Video demonstration"
-  />
+    <img src="assets/img/demo.mp4" width = "80%" alt = "Video demonstration"/>
 </p>
 
 <!-- GETTING STARTED -->
@@ -67,29 +64,29 @@ To get a local copy of the project up and running on your machine, follow these 
 
 1. Clone the project repository
 
-   ```sh
-   git clone https://github.com/Kaweees/KiwiCPP.git
-   cd KiwiCPP
-   ```
+    ```sh
+    git clone https://github.com/Kaweees/KiwiCPP.git
+    cd KiwiCPP
+    ```
 
 2. Install the project dependencies
 
-   ```sh
-   nix-shell --max-jobs $(nproc) # Linux / Windows (WSL)
-   nix-shell --max-jobs $(sysctl -n hw.ncpu) # macOS
-   ```
+    ```sh
+    nix-shell --max-jobs $(nproc) # Linux / Windows (WSL)
+    nix-shell --max-jobs $(sysctl -n hw.ncpu) # macOS
+    ```
 
 3. Build the project
 
-   ```sh
-   just build
-   ```
+    ```sh
+    just build
+    ```
 
 4. Run the project
 
-   ```sh
-   just run <package_name>
-   ```
+    ```sh
+    just run <package_name>
+    ```
 
 <!-- PROJECT FILE STRUCTURE -->
 ## Project Structure
