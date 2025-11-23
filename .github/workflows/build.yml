@@ -21,18 +21,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          path: example-application
           persist-credentials: false
+
+      - name: Remove .west directory
+        shell: bash
+        run: rm -rf .west
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: 3.12
+          cache: pip
 
       - name: Setup Zephyr project
         uses: zephyrproject-rtos/action-zephyr-setup@v1
         with:
-          app-path: example-application
+          app-path: .
           toolchains: arm-zephyr-eabi
           ccache-cache-key: ${{ matrix.os }}
 
@@ -41,7 +45,6 @@ jobs:
         run: west update
 
       - name: Build firmware
-        working-directory: example-application
         shell: bash
         run: |
           if [ "${{ runner.os }}" = "Windows" ]; then
@@ -50,7 +53,6 @@ jobs:
           west twister -T app -v --inline-logs --integration $EXTRA_TWISTER_FLAGS
 
       - name: Twister Tests
-        working-directory: example-application
         shell: bash
         run: |
           if [ "${{ runner.os }}" = "Windows" ]; then

@@ -13,6 +13,10 @@ alias d := docs
 default:
   @just --list
 
+#
+init:
+  @west init -l .
+
 # Build the project
 build *board='custom_plank':
   @mkdir -p build
