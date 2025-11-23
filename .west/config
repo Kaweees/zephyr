@@ -2,3 +2,6 @@
 path = .
 file = west.yml
 
+[zephyr]
+base = external/zephyr-rtos
+

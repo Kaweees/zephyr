@@ -1,5 +1,6 @@
 manifest:
   self:
+    path: .
     west-commands: scripts/west-commands.yml
 
   remotes:
@@ -10,7 +11,7 @@ manifest:
     - name: zephyr
       path: zephyr-rtos
       remote: zephyrproject-rtos
-      revision: main
+      revision: v4.3.0
       clone-depth: 1
       import:
         path-prefix: external

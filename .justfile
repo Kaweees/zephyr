@@ -6,7 +6,6 @@ alias b := build
 alias r := run
 alias t := test
 alias c := clean
-alias ch := check
 alias f := format
 alias d := docs
 
@@ -14,20 +13,17 @@ alias d := docs
 default:
   @just --list
 
-# Get the number of cores
-CORES := if os() == "macos" { `sysctl -n hw.ncpu` } else if os() == "linux" { `nproc` } else { "1" }
-
 # Build the project
-build *build_type='Release':
+build *board='custom_plank':
   @mkdir -p build
   @echo "Configuring the build system..."
-  @cd build && cmake -S .. -B . -DCMAKE_BUILD_TYPE={{build_type}} -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+  @west update
   @echo "Building the project..."
-  @cd build && cmake --build . -j{{CORES}}
+  west build -p -b {{board}} app -- -DEXTRA_CONF_FILE=debug.conf
 
 # Run a package
-run package='demo' *args='':
-  @./target/release/{{package}} {{args}}
+run:
+  @west flash
 
 # Run code quality tools
 test:
@@ -38,12 +34,8 @@ test:
 clean:
   @echo "Cleaning..."
   @find . -type d -name "build" -exec rm -rf {} +
-  @find . -type d -name "target" -exec rm -rf {} +
-
-# Run code quality tools
-check:
-  @echo "Running code quality tools..."
-  @cppcheck --error-exitcode=1 --project=build/compile_commands.json -i build/_deps/
+  @find . -type d -name "external" -exec rm -rf {} +
+  @find . -type d -name "twister-out" -exec rm -rf {} +
 
 # Format the project
 format:
@@ -56,3 +48,4 @@ format:
 # Generate documentation
 docs:
   @echo "Generating documentation..."
+  @cd doc && doxygen

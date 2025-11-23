@@ -15,7 +15,7 @@ mkShell {
     cmake-format # CMake format tool
     nixfmt # Nix formatter
     just # Just runner
-    # (zephyr.sdk.override { targets = [ "arm-zephyr-eabi" ]; })
+    (zephyr.sdk.override { targets = [ "arm-zephyr-eabi" ]; })
     zephyr.sdkFull
     zephyr.pythonEnv
     zephyr.hosttools-nix

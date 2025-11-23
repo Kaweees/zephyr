@@ -36,6 +36,10 @@ jobs:
           toolchains: arm-zephyr-eabi
           ccache-cache-key: ${{ matrix.os }}
 
+      - name: Update West Modules
+        shell: bash
+        run: west update
+
       - name: Build firmware
         working-directory: example-application
         shell: bash

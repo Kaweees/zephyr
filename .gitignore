@@ -8,6 +8,7 @@
 !.envrc
 !.gitattributes
 !.gitignore
+!.gitkeep
 !.gitmodules
 !.justfile
 !CMakeLists.txt
