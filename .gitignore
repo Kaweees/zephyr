@@ -17,6 +17,8 @@
 !LICENSE
 !README.md
 
+!.west/
+!.west/**
 !app/
 !app/**
 !boards/
