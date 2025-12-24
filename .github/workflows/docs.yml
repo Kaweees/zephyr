@@ -1,3 +1,4 @@
+---
 name: Documentation
 
 on: [push, pull_request]
@@ -5,10 +6,11 @@ on: [push, pull_request]
 permissions:
   contents: read
 
+# The sequence of runs in this workflow:
 jobs:
   build:
     name: Build
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         doxygen-version: [1.9.6, 1.14.0]
